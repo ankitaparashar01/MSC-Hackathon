@@ -15,8 +15,7 @@ class SignUpForm(forms.ModelForm):
 
     class Meta:
         model = Customer
-        fields = ("full_name", "email", "username", "password", "email",
-                  "department", "role")
+        fields = ("full_name", "email", "username", "password", "email")
 
     def clean_username(self):
         uname = self.cleaned_data.get("username")
