@@ -1,11 +1,3 @@
-
 *.pyc
-marineproject 2nd oct/marineproject/marineapp/__pycache__/__init__.cpython-39.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-marineproject 2nd oct/marineproject/marineapp/__pycache__/__init__.cpython-39.pyc
-marineproject 2nd oct/marineproject/marineapp/__pycache__/admin.cpython-38.pyc
+marineproject 2nd oct/marineproject/marineapp/__pycache__
+marineproject 2nd oct/virtenv
