@@ -23,5 +23,6 @@ class Customer(models.Model):
         return self.full_name
 
 
-#COMMENT CHIRAG
 #comments - prachi
+
+#Chirag loves paneer
