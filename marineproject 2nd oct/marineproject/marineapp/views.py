@@ -73,6 +73,9 @@ class LogOutView(View):
 class DashboardView(TemplateView):
     template_name = "dashboard.html"
 
+    def displaydepartment(request):
+        display = Customer.objects.department.get()
+
 
 # class VerificationView(TemplateView):
 #     #Template_name = "my_custom_email_message.html"

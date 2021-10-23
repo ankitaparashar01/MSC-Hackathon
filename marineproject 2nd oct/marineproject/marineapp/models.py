@@ -22,3 +22,8 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.full_name
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 9328a3dbf0c17f099703ee8660f6bd626871c43a

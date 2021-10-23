@@ -1,8 +1,6 @@
 from typing import Text
 from django import forms
 from django.db.models.enums import Choices
-from .models import User
-
 from django.contrib.auth.models import User
 from .models import *
 from .views import *
