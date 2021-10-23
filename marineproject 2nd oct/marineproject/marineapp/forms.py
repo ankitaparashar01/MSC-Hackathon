@@ -4,23 +4,15 @@ from django.db.models.enums import Choices
 from .models import User
 
 from django.contrib.auth.models import User
-
+from .models import *
 from .views import *
-
-DEPARTMENT_CHOICES = [
-    ('HR', 'HR'),
-    ('HOD', 'HOD'),
-    ('Trainer', 'Trainer'),
-]
 
 
 class SignUpForm(forms.ModelForm):
     username = forms.CharField(widget=forms.TextInput())
     password = forms.CharField(widget=forms.PasswordInput())
     email = forms.EmailField(widget=forms.EmailInput())
-    department = forms.MultipleChoiceField(required=False,
-                                           widget=forms.CheckboxSelectMultiple,
-                                           choices=DEPARTMENT_CHOICES)
+
 
     class Meta:
         model = Customer
