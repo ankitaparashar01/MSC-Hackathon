@@ -18,12 +18,7 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField("Full Name", max_length=250)
     email = models.EmailField()
-    department = MultiSelectField(choices = DEPARTMENT_CHOICES)
+    department = MultiSelectField(choices=DEPARTMENT_CHOICES)
 
     def __str__(self):
         return self.full_name
-
-
-#git trial - prachi
-
-#Chirag loves paneer
