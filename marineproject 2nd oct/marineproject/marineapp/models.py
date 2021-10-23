@@ -24,6 +24,3 @@ class Customer(models.Model):
         return self.full_name
 
 
-#git trial - prachi
-
-#Chirag loves paneer
