@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import SignUpForm, LogInForm
 
 
+
 # Create your views here.
 class HomeView(TemplateView):
     template_name = "home.html"
@@ -61,6 +62,10 @@ class LogOutView(View):
 
 class DashboardView(TemplateView):
     template_name = "dashboard.html"
+
+    def displaydepartment(request):
+        display = Customer.objects.department.get()
+
 
    
 
