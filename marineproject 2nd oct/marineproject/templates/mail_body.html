@@ -3,16 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation</title>
 </head>
 
 <body>
-    <div class="format-font">
-        <h1>Please Verify your Email by clicking the link below</h1>
-        <a href="{{link}}" class="my-button">Verify</a>
-        <!-- The "link" variable is passed by the app's backend containing verification link. -->
-    </div>
+    <h1>You are almost there, {{ user.username }}!</h1><br>
+    <h2>Please click <a href="{{ link }}">here</a> to confirm your account</h2>
+    <h2>The token expires on {{ expiry|time:"TIME_FORMAT" }}</h2>
 </body>
 
 </html>
