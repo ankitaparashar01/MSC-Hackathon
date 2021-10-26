@@ -7,15 +7,36 @@ from .views import *
 
 
 class SignUpForm(forms.ModelForm):
-    username = forms.CharField(widget=forms.TextInput())
-    password = forms.CharField(widget=forms.PasswordInput())
-    email = forms.EmailField(widget=forms.EmailInput())
+    full_name = forms.CharField(widget=forms.TextInput(
+        attrs={
+            "placeholder": "Full Name",
+            "class": "form-control"
+        }))
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={
+            "placeholder": "Username",
+            "class": "form-control"
+        }))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+        "placeholder": "Email",
+        "class": "form-control"
+    }))
+    password = forms.CharField(widget=forms.PasswordInput(
+        attrs={
+            "placeholder": "Password",
+            "class": "form-control"
+        }))
 
+    confirm_password = forms.CharField(widget=forms.PasswordInput(
+        attrs={
+            "placeholder": "Re-Enter Password",
+            "class": "form-control"
+        }))
 
     class Meta:
         model = Customer
-        fields = ("full_name", "email", "username", "password", "email",
-                  "department")
+        fields = ("full_name", "email", "username", "password",
+                  "confirm_password", "department")
 
     def clean_username(self):
         uname = self.cleaned_data.get("username")
@@ -24,7 +45,23 @@ class SignUpForm(forms.ModelForm):
                 "Username already exists. Please choose another username.")
         return uname
 
+    def clean(self):
+        cleaned_data = super(SignUpForm, self).clean()
+        password = cleaned_data.get("password")
+        confirm_password = cleaned_data.get("confirm_password")
+        if password != confirm_password:
+            self.add_error('confirm_password', "Password does not match")
+        return cleaned_data
+
 
 class LogInForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput())
-    password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={
+            "placeholder": "Username",
+            "class": "form-control"
+        }))
+    password = forms.CharField(widget=forms.PasswordInput(
+        attrs={
+            "placeholder": "Password",
+            "class": "form-control"
+        }))
