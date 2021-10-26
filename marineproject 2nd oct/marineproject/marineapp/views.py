@@ -8,11 +8,11 @@ from django.contrib.auth import authenticate, login, logout
 
 from .forms import SignUpForm, LogInForm
 
-from django.contrib.auth import get_user_model
-from verify_email.email_handler import send_verification_email  #MIGHT HAVE ERROR
+# from verify_email.email_handler import send_verification_email  #MIGHT HAVE ERROR
 from django.views.decorators.csrf import csrf_exempt
 
-# from django_email_verification import sendConfirm
+from django.contrib.auth import get_user_model
+from django_email_verification import send_email
 
 
 # Create your views here.
@@ -82,15 +82,25 @@ class DashboardView(TemplateView):
 #     pass
 
 
-@csrf_exempt
-def sendEmail(form, request):
-    # username = request.POST.get('username')
-    username = form.cleaned_data.get("username")
-    password = form.cleaned_data.get("password")
-    email = form.cleaned_data.get("email")
+# @csrf_exempt
+def sendEmail(request):  #add 'form' if required
+    # username = form.cleaned_data.get("username")
+    username = request.POST.get('username')
+    password = request.POST.get("password")
+    email = request.POST.get("email")
     user = get_user_model().objects.create(username=username,
                                            password=password,
                                            email=email)
+    user.is_active = False
     # sendConfirm(user)
-    send_verification_email(user)
+    send_email(user)
+    send_email(user, custom_salt=my_custom_key_salt)
     return render(request, 'confirm_template.html')
+
+
+class MyClassView(FormView):
+    def form_valid(self, form):
+        user = form.save()
+        returnVal = super(MyClassView, self).form_valid(form)
+        send_email(user)
+        return returnVal
