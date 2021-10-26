@@ -73,8 +73,8 @@ class LogOutView(View):
 class DashboardView(TemplateView):
     template_name = "dashboard.html"
 
-    def displaydepartment(request):
-        display = Customer.objects.department.get()
+    # def displaydepartment(request):
+    #     display = Customer.objects.department.get()
 
 
 # class VerificationView(TemplateView):
