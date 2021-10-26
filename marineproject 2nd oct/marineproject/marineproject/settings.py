@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'marineapp',  #APP NAME
     'multiselectfield',  #DJANGO MULTISELECT FIELD
     'verify_email.apps.VerifyEmailConfig',  #Email Verification
-    # 'django_email_verification',  # cuz first doesn't work :(
+    'django_email_verification',  # WORKSSSSSSSS YAY
 ]
 
 MIDDLEWARE = [
@@ -152,16 +152,27 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # LOGIN_URL = 'login.html'  #name of your login pattern
 # # Note: This variable is also used by django.
 
+
 # ___________________________________________________________________________
 # email verification attempt 2
+def verified_callback(user):
+    user.is_active = True
+
+
+EMAIL_VERIFIED_CALLBACK = verified_callback
+
 EMAIL_ACTIVE_FIELD = 'is_active'
 EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_ADDRESS = 'camps.sutdactalab@gmail.com'
 EMAIL_FROM_ADDRESS = 'noreply@MSCMaritimeaddress.com'
+EMAIL_USE_TLS = True
 EMAIL_PASSWORD = 'kenwxmuebsgwdkes'  # os.environ['password_key'] suggested
 EMAIL_MAIL_SUBJECT = 'Confirm your Email'
 EMAIL_MAIL_HTML = 'mail_body.html'
-# EMAIL_MAIL_PLAIN = 'mail_body.txt'
+EMAIL_MAIL_PLAIN = 'mail_body.txt'
+EMAIL_TOKEN_LIFE = 60 * 60
 EMAIL_PAGE_TEMPLATE = 'confirm_template.html'
 EMAIL_PAGE_DOMAIN = 'http://127.0.0.1:8000/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
