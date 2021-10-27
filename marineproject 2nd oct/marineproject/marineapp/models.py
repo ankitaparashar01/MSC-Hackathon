@@ -11,11 +11,11 @@ from django.forms import ModelForm
 
 
 class Customer(models.Model):
-    DEPARTMENT_CHOICES = [
-        ('HR', 'HR'),
-        ('Trainer', 'Trainer'),
-        ('Trainee', 'Trainee'),
-    ]
+    # DEPARTMENT_CHOICES = [
+    #     ('HR', 'HR'),
+    #     ('Trainer', 'Trainer'),
+    #     ('Trainee', 'Trainee'),
+    # ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField("Full Name", max_length=250)
