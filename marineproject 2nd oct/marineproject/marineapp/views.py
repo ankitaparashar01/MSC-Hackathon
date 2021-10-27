@@ -23,7 +23,7 @@ class HomeView(TemplateView):
 class SignUpView(CreateView):
     template_name = "signup.html"
     form_class = SignUpForm
-    success_url = reverse_lazy("marineapp:dashboard")
+    success_url = reverse_lazy("marineapp:maindashboard")
 
     def form_valid(self, form):
         username = form.cleaned_data.get("username")
@@ -41,7 +41,7 @@ class SignUpView(CreateView):
 class LogInView(FormView):
     template_name = "login.html"
     form_class = LogInForm
-    success_url = reverse_lazy("marineapp:dashboard")
+    success_url = reverse_lazy("marineapp:maindashboard")
 
     def form_valid(self, form):
         uname = form.cleaned_data.get("username")
@@ -70,11 +70,25 @@ class LogOutView(View):
         return redirect("marineapp:home")
 
 
-class DashboardView(TemplateView):
-    template_name = "dashboard.html"
+class MainDashboardView(TemplateView):
+    template_name = "maindashboard.html"
 
     # def displaydepartment(request):
     #     display = Customer.objects.department.get()
+
+class HRDashboardView(TemplateView):
+        template_name = "hrdashboard.html"
+
+class TrainerDashboardView(TemplateView):
+        template_name = "trainerdashboard.html"
+
+class TraineeDashboardView(TemplateView):
+        template_name = "traineedashboard.html"
+
+class HODDashboardView(TemplateView):
+        template_name = "hoddashboard.html"
+
+    
 
 
 # class VerificationView(TemplateView):
