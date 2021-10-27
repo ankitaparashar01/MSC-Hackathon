@@ -105,15 +105,15 @@ class DeleteEventView(View):
 
     #     return redirect('trainerdashboard.html')
 
-    def get(self, request, *args, **kwargs):
-        module_id = self.kwargs["module_id"]
-        action = request.GET.get("action")
-        module_obj = Module1.objects.get(id=module_id)
+    # def get(self, request, *args, **kwargs):
+    #     module_id = self.kwargs["module_id"]
+    #     action = request.GET.get("action")
+    #     module_obj = Module1.objects.get(id=module_id)
 
-        if action == "rmv":
-            cart_obj.total -= cp_obj.subtotal
-            cart_obj.save()
-            cp_obj.delete()
+    #     if action == "rmv":
+    #         cart_obj.total -= cp_obj.subtotal
+    #         cart_obj.save()
+    #         cp_obj.delete()
 
 
 
@@ -178,3 +178,5 @@ class MyClassView(FormView):
         returnVal = super(MyClassView, self).form_valid(form)
         send_email(user)
         return returnVal
+
+
