@@ -16,8 +16,11 @@ urlpatterns = [
     path("hrdashboard/", HRDashboardView.as_view(), name="hrdashboard"),
     path("traineedashboard/", TraineeDashboardView.as_view(), name="traineedashboard"),
     path("trainerdashboard/", TrainerDashboardView.as_view(), name="trainerdashboard"),
-    path("hoddashboard/", HODDashboardView.as_view(), name="hoddashboard"),
     path("module1question/", Module1QuestionView.as_view(), name="module1question"),
+    path("module2question/", Module2QuestionView.as_view(), name="module2question"),
+    path("module3question/", Module3QuestionView.as_view(), name="module3question"),
+
+
 
 
 
