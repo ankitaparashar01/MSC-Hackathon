@@ -6,7 +6,7 @@ from .models import *
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 
-from .forms import SignUpForm, LogInForm
+from .forms import *
 
 # from verify_email.email_handler import send_verification_email  #MIGHT HAVE ERROR
 from django.views.decorators.csrf import csrf_exempt
@@ -73,9 +73,6 @@ class LogOutView(View):
 class MainDashboardView(TemplateView):
     template_name = "maindashboard.html"
 
-    # def displaydepartment(request):
-    #     display = Customer.objects.department.get()
-
 class HRDashboardView(TemplateView):
         template_name = "hrdashboard.html"
 
@@ -87,6 +84,16 @@ class TraineeDashboardView(TemplateView):
 
 class HODDashboardView(TemplateView):
         template_name = "hoddashboard.html"
+
+
+class Module1QuestionView(CreateView):
+    template_name = "module1.html"
+    form_class = Module1Form
+    success_url = reverse_lazy("marineapp:traineedashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
 
     
 
