@@ -5,7 +5,7 @@ from django.core.validators import FileExtensionValidator
 from django.db.models.enums import Choices
 from django.forms.fields import CharField
 from multiselectfield import MultiSelectField
-from django.forms import ModelForm 
+from django.forms import ModelForm
 
 # Create your models here.
 
@@ -20,10 +20,14 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField("Full Name", max_length=250)
     email = models.EmailField()
-    department = MultiSelectField(choices=DEPARTMENT_CHOICES)
+    # department = MultiSelectField(choices=DEPARTMENT_CHOICES)
+    hr = models.BooleanField("HR", default=False)
+    trainer = models.BooleanField("Trainer", default=False)
+    trainee = models.BooleanField("Trainee", default=False)
 
     def __str__(self):
         return self.full_name
+
 
 class Module1(models.Model):
 
@@ -38,6 +42,7 @@ class Module1(models.Model):
     def __str__(self):
         return self.word1
 
+
 class Module2(models.Model):
 
     word1 = models.CharField(max_length=250)
@@ -51,6 +56,7 @@ class Module2(models.Model):
     def __str__(self):
         return self.word1
 
+
 class Module3(models.Model):
 
     word1 = models.CharField(max_length=250)
@@ -63,8 +69,3 @@ class Module3(models.Model):
 
     def __str__(self):
         return self.word1
-
-
-
-
-
