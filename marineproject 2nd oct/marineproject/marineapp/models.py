@@ -5,6 +5,7 @@ from django.core.validators import FileExtensionValidator
 from django.db.models.enums import Choices
 from django.forms.fields import CharField
 from multiselectfield import MultiSelectField
+from django.forms import ModelForm 
 
 # Create your models here.
 
@@ -12,7 +13,6 @@ from multiselectfield import MultiSelectField
 class Customer(models.Model):
     DEPARTMENT_CHOICES = [
         ('HR', 'HR'),
-        ('HOD', 'HOD'),
         ('Trainer', 'Trainer'),
         ('Trainee', 'Trainee'),
     ]
@@ -27,13 +27,39 @@ class Customer(models.Model):
 
 class Module1(models.Model):
 
-    word1 = CharField(max_length=250)
-    word2 = CharField(max_length=250)
-    question = CharField(max_length=2000)
-    right_option = CharField(max_length=1000)
-    first_wrong_option = CharField(max_length=1000)
-    second_wrong_option = CharField(max_length=1000)
-    third_wrong_option = CharField(max_length=1000)
+    word1 = models.CharField(max_length=250)
+    word2 = models.CharField(max_length=250)
+    question = models.CharField(max_length=2000)
+    right_option = models.CharField(max_length=1000)
+    first_wrong_option = models.CharField(max_length=1000)
+    second_wrong_option = models.CharField(max_length=1000)
+    third_wrong_option = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.word1
+
+class Module2(models.Model):
+
+    word1 = models.CharField(max_length=250)
+    word2 = models.CharField(max_length=250)
+    question = models.CharField(max_length=2000)
+    right_option = models.CharField(max_length=1000)
+    first_wrong_option = models.CharField(max_length=1000)
+    second_wrong_option = models.CharField(max_length=1000)
+    third_wrong_option = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.word1
+
+class Module3(models.Model):
+
+    word1 = models.CharField(max_length=250)
+    word2 = models.CharField(max_length=250)
+    question = models.CharField(max_length=2000)
+    right_option = models.CharField(max_length=1000)
+    first_wrong_option = models.CharField(max_length=1000)
+    second_wrong_option = models.CharField(max_length=1000)
+    third_wrong_option = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.word1
