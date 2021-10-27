@@ -13,6 +13,7 @@ class Customer(models.Model):
         ('HR', 'HR'),
         ('HOD', 'HOD'),
         ('Trainer', 'Trainer'),
+        ('Trainee', 'Trainee'),
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
