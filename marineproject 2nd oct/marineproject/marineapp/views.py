@@ -76,6 +76,13 @@ class MainDashboardView(TemplateView):
 class HRDashboardView(TemplateView):
     template_name = "hrdashboard.html"
 
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['names_list'] = Customer.objects.all()
+
+        return context
+
 class TrainerDashboardView(TemplateView):
     template_name = "trainerdashboard.html"
 
