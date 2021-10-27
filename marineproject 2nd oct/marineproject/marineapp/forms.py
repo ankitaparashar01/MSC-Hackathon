@@ -65,3 +65,12 @@ class LogInForm(forms.Form):
             "placeholder": "Password",
             "class": "form-control"
         }))
+
+
+
+class Module1Form(forms.ModelForm):
+
+    class Meta:
+        model = Module1
+        fields = ("word1", "word2", "question", "right_option", "first_wrong_option", "second_wrong_option", "third_wrong_option")
+
