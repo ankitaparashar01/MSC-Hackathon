@@ -1,5 +1,6 @@
 from typing import Text
 from django import forms
+from django.forms import ModelForm 
 from django.db.models.enums import Choices
 from django.contrib.auth.models import User
 from .models import *
@@ -72,5 +73,18 @@ class Module1Form(forms.ModelForm):
 
     class Meta:
         model = Module1
+        fields = ("word1", "word2", "question", "right_option", "first_wrong_option", "second_wrong_option", "third_wrong_option")
+
+
+class Module2Form(forms.ModelForm):
+
+    class Meta:
+        model = Module2
+        fields = ("word1", "word2", "question", "right_option", "first_wrong_option", "second_wrong_option", "third_wrong_option")
+
+class Module3Form(forms.ModelForm):
+
+    class Meta:
+        model = Module3
         fields = ("word1", "word2", "question", "right_option", "first_wrong_option", "second_wrong_option", "third_wrong_option")
 
