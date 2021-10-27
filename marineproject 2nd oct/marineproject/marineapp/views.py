@@ -74,26 +74,64 @@ class MainDashboardView(TemplateView):
     template_name = "maindashboard.html"
 
 class HRDashboardView(TemplateView):
-        template_name = "hrdashboard.html"
+    template_name = "hrdashboard.html"
 
 class TrainerDashboardView(TemplateView):
-        template_name = "trainerdashboard.html"
+    template_name = "trainerdashboard.html"
+
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['module1_list'] = Module1.objects.all()
+        context['module2_list'] = Module2.objects.all()
+        context['module3_list'] = Module3.objects.all()
+
+
+        return context
+
+    # def get(self, request, *args, **kwargs):
+    #     action = request.GET.get("action")
+
+    #     if action == "rmv":
+
 
 class TraineeDashboardView(TemplateView):
         template_name = "traineedashboard.html"
-
-class HODDashboardView(TemplateView):
-        template_name = "hoddashboard.html"
 
 
 class Module1QuestionView(CreateView):
     template_name = "module1.html"
     form_class = Module1Form
-    success_url = reverse_lazy("marineapp:traineedashboard")
+    success_url = reverse_lazy("marineapp:trainerdashboard")
 
     def form_valid(self, form):
 
         return super().form_valid(form)
+
+class Module2QuestionView(CreateView):
+    template_name = "module2.html"
+    form_class = Module2Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
+
+class Module3QuestionView(CreateView):
+    template_name = "module3.html"
+    form_class = Module3Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
+
+
+
+
+
+
 
     
 
