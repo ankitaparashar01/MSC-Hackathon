@@ -9,8 +9,8 @@
 </head>
 <body>
     <h1>Trainer Dashboard</h1>
-    <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Main Dashboard</button></a>
-    <a href="{% url 'marineapp:module1question' %}"><button>Module 1</button></a>
+    <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Main Dashboard</button></a><br><br>
+    <a href="{% url 'marineapp:module1question' %}"><button>Upload questions for Module 1</button></a>
 
     <h1>Module 1 Table</h1>
 
@@ -27,6 +27,7 @@
                 <th  class="h5"> First Wrong Option   </button> </th>
                 <th  class="h5"> Second Wrong Option  </button> </th>
                 <th  class="h5"> Third Wrong Option </button> </th>
+                <th  class="h5"> Remove </button> </th>
                 </tr> 
 
             </thead> 
@@ -42,6 +43,7 @@
                 <td>{{i.first_wrong_option}}</td>
                 <td>{{i.second_wrong_option}}</td>
                 <td>{{i.third_wrong_option}}</td>
+                <td><a href="{% url 'marineapp:deleteevent' %}"><button> Delete </button></a></td>
                </tr>
                 {% endfor %}
             
@@ -49,7 +51,7 @@
             </table> 
         </div> 
     </div> 
-    <a href="{% url 'marineapp:module2question' %}"><button>Module 2</button></a>
+    <a href="{% url 'marineapp:module2question' %}"><button>Upload questions for Module 2</button></a>
 
     <h1>Module 2 Table</h1>
 
@@ -90,7 +92,7 @@
     </div> 
 
 
-    <a href="{% url 'marineapp:module3question' %}"><button>Module 3</button></a>
+    <a href="{% url 'marineapp:module3question' %}"><button> Upload questions for Module 3</button></a>
 <h1>Module 3 Table</h1>
 
     <div class="row"> 
@@ -128,6 +130,11 @@
             </table> 
         </div> 
     </div> 
+
+
+    <a href=""><button> Upload questions for Module 4</button></a>
+    <a href=""><button> Upload questions for Module 5</button></a>
+
 
 </body>
 </html>
