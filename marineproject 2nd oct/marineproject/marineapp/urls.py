@@ -9,8 +9,14 @@ urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),
     path("login/", LogInView.as_view(), name="login"),
     path("logout/", LogOutView.as_view(), name="logout"),
-    path("dashboard/", DashboardView.as_view(), name="dashboard"),
+    path("maindashboard/", MainDashboardView.as_view(), name="maindashboard"),
     # path('verification/', VerificationView.as_view(), name='verify_email'),
     re_path('^send_email/$', sendEmail),
     path('email/', include(email_urls)),
+    path("hrdashboard/", HRDashboardView.as_view(), name="hrdashboard"),
+    path("traineedashboard/", TraineeDashboardView.as_view(), name="traineedashboard"),
+    path("trainerdashboard/", TrainerDashboardView.as_view(), name="trainerdashboard"),
+    path("hoddashboard/", HODDashboardView.as_view(), name="hoddashboard"),
+
+
 ]
