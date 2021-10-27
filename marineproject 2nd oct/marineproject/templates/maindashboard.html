@@ -15,6 +15,8 @@
     <p>Name: {{request.user.customer.full_name}}</p>
     <p>Email: {{request.user.customer.email}}</p>
     <p>Departments: {{request.user.customer.department}}</p>
+
+<!-- if statement to show only one value -->
 <a href="{% url 'marineapp:hrdashboard' %}"><button onclick="">HR Dashboard</button></a>
 <a href="{% url 'marineapp:trainerdashboard' %}"><button onclick="">Trainer Dashboard</button></a>
 <a href="{% url 'marineapp:traineedashboard' %}"><button onclick="">Trainee Dashboard</button></a>
