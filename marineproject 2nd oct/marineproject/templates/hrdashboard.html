@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
+
 <body>
     <h1>HR Dashboard</h1>
     <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Main Dashboard</button></a>
-    <div class="row"> 
-           
-        <div class="data_list_class" style="width: 100%;"> 
-            <table class = "table table-active table-bordered table-hover-responsive-xl" id="myTable" > 
-            <thead class="thead-dark"> 
-                <tr id='tableHeader'> 
-                <th class="h5"> Trainee Name </button> </th>
-                <th class="h5"> Current Module  </button> </th>
-                <th  class="h5"> Points </button> </th>
-                <th  class="h5"> Progress </button> </th>
-                </tr> 
+    <div class="row">
 
-            </thead> 
+        <div class="data_list_class" style="width: 100%;">
+            <table class="table table-active table-bordered table-hover-responsive-xl" id="myTable">
+                <thead class="thead-dark">
+                    <tr id='tableHeader'>
+                        <th class="h5"> Trainee Name </button> </th>
+                        <th class="h5"> Current Module </button> </th>
+                        <th class="h5"> Points </button> </th>
+                        <th class="h5"> Progress </button> </th>
+                    </tr>
 
-            <tbody> 
-             
-                {% for i in names_list%}
-               <tr>
+                </thead>
 
-               
-                <td>{{i.full_name}}</td>
+                <tbody>
 
-                <td> current module </td>
-                <td> points </td>
-                <td> progress </td>
-               </tr> 
-               {% endfor %}
-            
-            </tbody> 
-            </table> 
-        </div> 
-    </div> 
+                    {% for i in names_list%}
+                    <tr>
+
+
+                        <td>{{i.full_name}}</td>
+
+                        <td> current module </td>
+                        <td> points </td>
+                        <td> progress </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>
