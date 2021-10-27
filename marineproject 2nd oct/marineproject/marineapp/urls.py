@@ -17,6 +17,8 @@ urlpatterns = [
     path("traineedashboard/", TraineeDashboardView.as_view(), name="traineedashboard"),
     path("trainerdashboard/", TrainerDashboardView.as_view(), name="trainerdashboard"),
     path("hoddashboard/", HODDashboardView.as_view(), name="hoddashboard"),
+    path("module1question/", Module1QuestionView.as_view(), name="module1question"),
+
 
 
 ]
