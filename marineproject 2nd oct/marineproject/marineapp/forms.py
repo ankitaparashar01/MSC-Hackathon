@@ -1,8 +1,8 @@
 from typing import Text
 from django import forms
-from django.forms import ModelForm
 from django.db.models.enums import Choices
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 from .models import *
 from .views import *
 
@@ -27,7 +27,6 @@ class SignUpForm(forms.ModelForm):
             "placeholder": "Password",
             "class": "form-control"
         }))
-
     confirm_password = forms.CharField(widget=forms.PasswordInput(
         attrs={
             "placeholder": "Re-Enter Password",
@@ -52,6 +51,13 @@ class SignUpForm(forms.ModelForm):
         confirm_password = cleaned_data.get("confirm_password")
         if password != confirm_password:
             self.add_error('confirm_password', "Password does not match")
+        if (len(password) < 9):
+            self.add_error('password',
+                           'Use a password with a minimum of 10 charcters.')
+        if password.isdigit():
+            self.add_error(
+                'password',
+                'password must contains both aplhabets and numbers')
         return cleaned_data
 
 
