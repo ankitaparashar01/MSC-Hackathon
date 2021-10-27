@@ -73,6 +73,7 @@ class LogOutView(View):
 class MainDashboardView(TemplateView):
     template_name = "maindashboard.html"
 
+
 class HRDashboardView(TemplateView):
     template_name = "hrdashboard.html"
 
@@ -83,9 +84,9 @@ class HRDashboardView(TemplateView):
 
         return context
 
+
 class TrainerDashboardView(TemplateView):
     template_name = "trainerdashboard.html"
-
 
     def get_context_data(self, **kwargs):
 
@@ -93,7 +94,6 @@ class TrainerDashboardView(TemplateView):
         context['module1_list'] = Module1.objects.all()
         context['module2_list'] = Module2.objects.all()
         context['module3_list'] = Module3.objects.all()
-
 
         return context
 
@@ -104,7 +104,7 @@ class TrainerDashboardView(TemplateView):
 
 
 class TraineeDashboardView(TemplateView):
-        template_name = "traineedashboard.html"
+    template_name = "traineedashboard.html"
 
 
 class Module1QuestionView(CreateView):
@@ -116,6 +116,7 @@ class Module1QuestionView(CreateView):
 
         return super().form_valid(form)
 
+
 class Module2QuestionView(CreateView):
     template_name = "module2.html"
     form_class = Module2Form
@@ -125,6 +126,7 @@ class Module2QuestionView(CreateView):
 
         return super().form_valid(form)
 
+
 class Module3QuestionView(CreateView):
     template_name = "module3.html"
     form_class = Module3Form
@@ -133,14 +135,6 @@ class Module3QuestionView(CreateView):
     def form_valid(self, form):
 
         return super().form_valid(form)
-
-
-
-
-
-
-
-    
 
 
 # class VerificationView(TemplateView):
