@@ -97,10 +97,24 @@ class TrainerDashboardView(TemplateView):
 
         return context
 
-    # def get(self, request, *args, **kwargs):
-    #     action = request.GET.get("action")
+class DeleteEventView(View):
 
-    #     if action == "rmv":
+    # def delete_event(request, event_id):
+    #     event = Module1.objects.get(pk=event_id)
+    #     event.delete()
+
+    #     return redirect('trainerdashboard.html')
+
+    def get(self, request, *args, **kwargs):
+        module_id = self.kwargs["module_id"]
+        action = request.GET.get("action")
+        module_obj = Module1.objects.get(id=module_id)
+
+        if action == "rmv":
+            cart_obj.total -= cp_obj.subtotal
+            cart_obj.save()
+            cp_obj.delete()
+
 
 
 class TraineeDashboardView(TemplateView):
