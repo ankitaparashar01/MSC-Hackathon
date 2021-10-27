@@ -5,16 +5,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainer Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <h1>Trainer Dashboard</h1>
     <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Main Dashboard</button></a>
-    <a href="{% url 'marineapp:module1question%}"><button onclick="">Module 1</button></a>
-    <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Module 2</button></a>
-    <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Module 3</button></a>
-    <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Module 4</button></a>
-    <a href="{% url 'marineapp:maindashboard' %}"><button onclick="">Module 5</button></a>
+    <a href="{% url 'marineapp:module1question' %}"><button>Module 1</button></a>
 
+    <h1>Module 1 Table</h1>
+
+    <div class="row"> 
+           
+        <div class="data_list_class" style="width: 100%;"> 
+            <table class = "table table-active table-bordered table-hover-responsive-xl" id="myTable" > 
+            <thead class="thead-dark"> 
+                <tr id='tableHeader'> 
+                <th class="h5"> Word 1  </button> </th>
+                <th class="h5"> Word 2  </button> </th>
+                <th  class="h5"> Question  </button> </th>
+                <th  class="h5"> Right Option </button> </th>
+                <th  class="h5"> First Wrong Option   </button> </th>
+                <th  class="h5"> Second Wrong Option  </button> </th>
+                <th  class="h5"> Third Wrong Option </button> </th>
+                </tr> 
+
+            </thead> 
+
+            <tbody> 
+             
+                {% for i in module1_list%}
+               <tr>
+                <td>{{i.word1}}</td>
+                <td>{{i.word2}}</td>
+                <td>{{i.question}}</td>
+                <td>{{i.right_option}}</td>
+                <td>{{i.first_wrong_option}}</td>
+                <td>{{i.second_wrong_option}}</td>
+                <td>{{i.third_wrong_option}}</td>
+               </tr>
+                {% endfor %}
+            
+            </tbody> 
+            </table> 
+        </div> 
+    </div> 
+    <a href="{% url 'marineapp:module2question' %}"><button>Module 2</button></a>
+
+    <h1>Module 2 Table</h1>
+
+    <div class="row"> 
+           
+        <div class="data_list_class" style="width: 100%;"> 
+            <table class = "table table-active table-bordered table-hover-responsive-xl" id="myTable" > 
+            <thead class="thead-dark"> 
+                <tr id='tableHeader'> 
+                <th class="h5"> Word 1  </button> </th>
+                <th class="h5"> Word 2  </button> </th>
+                <th  class="h5"> Question  </button> </th>
+                <th  class="h5"> Right Option </button> </th>
+                <th  class="h5"> First Wrong Option   </button> </th>
+                <th  class="h5"> Second Wrong Option  </button> </th>
+                <th  class="h5"> Third Wrong Option </button> </th>
+                </tr> 
+
+            </thead> 
+
+            <tbody> 
+             
+                {% for i in module2_list%}
+               <tr>
+                <td>{{i.word1}}</td>
+                <td>{{i.word2}}</td>
+                <td>{{i.question}}</td>
+                <td>{{i.right_option}}</td>
+                <td>{{i.first_wrong_option}}</td>
+                <td>{{i.second_wrong_option}}</td>
+                <td>{{i.third_wrong_option}}</td>
+               </tr>
+                {% endfor %}
+            
+            </tbody> 
+            </table> 
+        </div> 
+    </div> 
+
+
+    <a href="{% url 'marineapp:module3question' %}"><button>Module 3</button></a>
+<h1>Module 3 Table</h1>
+
+    <div class="row"> 
+           
+        <div class="data_list_class" style="width: 100%;"> 
+            <table class = "table table-active table-bordered table-hover-responsive-xl" id="myTable" > 
+            <thead class="thead-dark"> 
+                <tr id='tableHeader'> 
+                <th class="h5"> Word 1  </button> </th>
+                <th class="h5"> Word 2  </button> </th>
+                <th  class="h5"> Question  </button> </th>
+                <th  class="h5"> Right Option </button> </th>
+                <th  class="h5"> First Wrong Option   </button> </th>
+                <th  class="h5"> Second Wrong Option  </button> </th>
+                <th  class="h5"> Third Wrong Option </button> </th>
+                </tr> 
+
+            </thead> 
+
+            <tbody> 
+             
+                {% for i in module3_list%}
+               <tr>
+                <td>{{i.word1}}</td>
+                <td>{{i.word2}}</td>
+                <td>{{i.question}}</td>
+                <td>{{i.right_option}}</td>
+                <td>{{i.first_wrong_option}}</td>
+                <td>{{i.second_wrong_option}}</td>
+                <td>{{i.third_wrong_option}}</td>
+               </tr>
+                {% endfor %}
+            
+            </tbody> 
+            </table> 
+        </div> 
+    </div> 
 
 </body>
 </html>
