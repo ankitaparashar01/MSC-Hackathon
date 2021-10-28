@@ -72,6 +72,7 @@ class LogOutView(View):
 
 class MainDashboardView(TemplateView):
     template_name = "maindashboard.html"
+  
 
 
 class HRDashboardView(TemplateView):
@@ -83,7 +84,6 @@ class HRDashboardView(TemplateView):
         context['names_list'] = Customer.objects.all()
 
         return context
-
 
 class TrainerDashboardView(TemplateView):
     template_name = "trainerdashboard.html"
@@ -97,23 +97,6 @@ class TrainerDashboardView(TemplateView):
 
         return context
 
-class DeleteEventView(View):
-
-    # def delete_event(request, event_id):
-    #     event = Module1.objects.get(pk=event_id)
-    #     event.delete()
-
-    #     return redirect('trainerdashboard.html')
-
-    # def get(self, request, *args, **kwargs):
-    #     module_id = self.kwargs["module_id"]
-    #     action = request.GET.get("action")
-    #     module_obj = Module1.objects.get(id=module_id)
-
-    #     if action == "rmv":
-    #         cart_obj.total -= cp_obj.subtotal
-    #         cart_obj.save()
-    #         cp_obj.delete()
 
 
 
