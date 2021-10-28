@@ -19,8 +19,6 @@ urlpatterns = [
     path("module1question/", Module1QuestionView.as_view(), name="module1question"),
     path("module2question/", Module2QuestionView.as_view(), name="module2question"),
     path("module3question/", Module3QuestionView.as_view(), name="module3question"),
-    path('delete_event/', DeleteEventView.as_view(), name="deleteevent"),
-    # path("chat-box/", ChatBoxView.as_view(), name="chatbox"),
 
 
 
