@@ -16,11 +16,16 @@
     <p>Email: {{request.user.customer.email}}</p>
     <p>Departments: {{request.user.customer.department}}</p>
 
-<!-- if statement to show only one value -->
-<a href="{% url 'marineapp:hrdashboard' %}"><button onclick="">HR Dashboard</button></a>
-<a href="{% url 'marineapp:trainerdashboard' %}"><button onclick="">Trainer Dashboard</button></a>
-<a href="{% url 'marineapp:traineedashboard' %}"><button onclick="">Trainee Dashboard</button></a>
-    
+    <!-- if statement to show only one value -->
+    {% if user.customer.hr %}
+    <a href="{% url 'marineapp:hrdashboard' %}"><button onclick="">HR Dashboard</button></a>
+    {% endif %}
+    {% if user.customer.trainer %}
+    <a href="{% url 'marineapp:trainerdashboard' %}"><button onclick="">Trainer Dashboard</button></a>
+    {% endif %}
+    {% if user.customer.trainee %}
+    <a href="{% url 'marineapp:traineedashboard' %}"><button onclick="">Trainee Dashboard</button></a>
+    {% endif %}
 
 </body>
 
