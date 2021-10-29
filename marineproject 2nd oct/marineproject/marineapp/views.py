@@ -85,6 +85,9 @@ class HRDashboardView(TemplateView):
 
         return context
 
+
+class TraineeDashboardView(TemplateView):
+    template_name = "traineedashboard.html"
 class TrainerDashboardView(TemplateView):
     template_name = "trainerdashboard.html"
 
@@ -98,10 +101,13 @@ class TrainerDashboardView(TemplateView):
         return context
 
 
+def delrec(request,id):
+    delete_row = Module1.objects.get(id=id)
+    delete_row.delete()
+    module1_list = Module1.objects.all()
 
+    return render(request, "trainerdashboard.html", {"Module1":module1_list})
 
-class TraineeDashboardView(TemplateView):
-    template_name = "traineedashboard.html"
 
 
 class Module1QuestionView(CreateView):
@@ -112,6 +118,7 @@ class Module1QuestionView(CreateView):
     def form_valid(self, form):
 
         return super().form_valid(form)
+
 
 
 class Module2QuestionView(CreateView):
