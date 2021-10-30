@@ -18,7 +18,7 @@
                     <h5>Log-In</h5>
                 </div>
                 <div class="p-3 px-4 py-4 border-bottom">
-
+                    <!-- copy lines 15-32-->
                     {% csrf_token %}{{form.as_p}}
                 </div> <button class="btn btn-danger btn-block continue">Log-In</button>
                 {% if error %}
