@@ -1,6 +1,7 @@
 from django.urls import path, include, re_path
 from .views import *
 from django_email_verification import urls as email_urls
+from . import views 
 # from verify_email import urls as mail_urls  #MIGHT HAVE ERROR
 
 app_name = "marineapp"
@@ -19,10 +20,7 @@ urlpatterns = [
     path("module1question/", Module1QuestionView.as_view(), name="module1question"),
     path("module2question/", Module2QuestionView.as_view(), name="module2question"),
     path("module3question/", Module3QuestionView.as_view(), name="module3question"),
-
-
-
-
-
+    path("delete-record/<int:id>", views.delrec)
+    
 
 ]

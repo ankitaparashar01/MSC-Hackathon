@@ -24,7 +24,6 @@ class Customer(models.Model):
     hr = models.BooleanField("HR", default=False)
     trainer = models.BooleanField("Trainer", default=False)
     trainee = models.BooleanField("Trainee", default=False)
-    profile_pic = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.full_name
