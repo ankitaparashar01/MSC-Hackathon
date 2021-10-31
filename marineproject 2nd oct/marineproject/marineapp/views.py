@@ -6,7 +6,7 @@ from .models import *
 from django.urls import reverse_lazy
 from django.contrib.auth import authenticate, login, logout
 
-from .forms import SignUpForm, LogInForm
+from .forms import *
 
 # from verify_email.email_handler import send_verification_email  #MIGHT HAVE ERROR
 from django.views.decorators.csrf import csrf_exempt
@@ -23,7 +23,7 @@ class HomeView(TemplateView):
 class SignUpView(CreateView):
     template_name = "signup.html"
     form_class = SignUpForm
-    success_url = reverse_lazy("marineapp:dashboard")
+    success_url = reverse_lazy("marineapp:maindashboard")
 
     def form_valid(self, form):
         username = form.cleaned_data.get("username")
@@ -41,7 +41,7 @@ class SignUpView(CreateView):
 class LogInView(FormView):
     template_name = "login.html"
     form_class = LogInForm
-    success_url = reverse_lazy("marineapp:dashboard")
+    success_url = reverse_lazy("marineapp:maindashboard")
 
     def form_valid(self, form):
         uname = form.cleaned_data.get("username")
@@ -70,11 +70,75 @@ class LogOutView(View):
         return redirect("marineapp:home")
 
 
-class DashboardView(TemplateView):
-    template_name = "dashboard.html"
+class MainDashboardView(TemplateView):
+    template_name = "maindashboard.html"
+  
 
-    # def displaydepartment(request):
-    #     display = Customer.objects.department.get()
+
+class HRDashboardView(TemplateView):
+    template_name = "hrdashboard.html"
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['names_list'] = Customer.objects.all()
+
+        return context
+
+
+class TraineeDashboardView(TemplateView):
+    template_name = "traineedashboard.html"
+class TrainerDashboardView(TemplateView):
+    template_name = "trainerdashboard.html"
+
+    def get_context_data(self, **kwargs):
+
+        context = super().get_context_data(**kwargs)
+        context['module1_list'] = Module1.objects.all()
+        context['module2_list'] = Module2.objects.all()
+        context['module3_list'] = Module3.objects.all()
+
+        return context
+
+
+def delrec(request,id):
+    delete_row = Module1.objects.get(id=id)
+    delete_row.delete()
+    module1_list = Module1.objects.all()
+
+    return render(request, "trainerdashboard.html", {"Module1":module1_list})
+
+
+
+class Module1QuestionView(CreateView):
+    template_name = "module1.html"
+    form_class = Module1Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
+
+
+
+class Module2QuestionView(CreateView):
+    template_name = "module2.html"
+    form_class = Module2Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
+
+
+class Module3QuestionView(CreateView):
+    template_name = "module3.html"
+    form_class = Module3Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
 
 
 # class VerificationView(TemplateView):
@@ -104,3 +168,5 @@ class MyClassView(FormView):
         returnVal = super(MyClassView, self).form_valid(form)
         send_email(user)
         return returnVal
+
+
