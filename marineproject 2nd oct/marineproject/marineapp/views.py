@@ -72,7 +72,6 @@ class LogOutView(View):
 
 class MainDashboardView(TemplateView):
     template_name = "maindashboard.html"
-  
 
 
 class HRDashboardView(TemplateView):
@@ -88,6 +87,8 @@ class HRDashboardView(TemplateView):
 
 class TraineeDashboardView(TemplateView):
     template_name = "traineedashboard.html"
+
+
 class TrainerDashboardView(TemplateView):
     template_name = "trainerdashboard.html"
 
@@ -101,13 +102,12 @@ class TrainerDashboardView(TemplateView):
         return context
 
 
-def delrec(request,id):
+def delrec(request, id):
     delete_row = Module1.objects.get(id=id)
     delete_row.delete()
     module1_list = Module1.objects.all()
 
-    return render(request, "trainerdashboard.html", {"Module1":module1_list})
-
+    return render(request, "trainerdashboard.html", {"Module1": module1_list})
 
 
 class Module1QuestionView(CreateView):
@@ -118,7 +118,6 @@ class Module1QuestionView(CreateView):
     def form_valid(self, form):
 
         return super().form_valid(form)
-
 
 
 class Module2QuestionView(CreateView):
@@ -139,6 +138,16 @@ class Module3QuestionView(CreateView):
     def form_valid(self, form):
 
         return super().form_valid(form)
+
+
+class InsideShipView(TemplateView):
+    template_name = "Inside_Ship.html"
+    pass
+
+
+class OutsideShipView(TemplateView):
+    template_name = "Outside_Ship.html"
+    pass
 
 
 # class VerificationView(TemplateView):
@@ -168,5 +177,3 @@ class MyClassView(FormView):
         returnVal = super(MyClassView, self).form_valid(form)
         send_email(user)
         return returnVal
-
-
