@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
 
 <body>
     <!-- {% include 'navbar.html' %} -->
-<!-- copy lines 15,16, 20-28 -->
+    <!-- copy lines 15,16, 20-28 -->
     <h1>Main Dashboard</h1>
     <img src="{{request.user.customer.profile_pic}}" alt="need to upload profile pic of person">
     <p>Name: {{request.user.customer.full_name}}</p>
@@ -27,6 +28,8 @@
     {% if user.customer.trainee %}
     <a href="{% url 'marineapp:traineedashboard' %}"><button onclick="">Trainee Dashboard</button></a>
     {% endif %}
+    <a href="{% url 'marineapp:Outsideship' %}"><button onclick="">Outside Ship</button></a>
+    <a href="{% url 'marineapp:insideship' %}"><button onclick="">Inside Ship</button></a>
 
 </body>
 
