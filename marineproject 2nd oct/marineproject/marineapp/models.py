@@ -69,3 +69,7 @@ class Module3(models.Model):
 
     def __str__(self):
         return self.word1
+
+
+# class Hangman(models.Model):
+#     Word = models.CharField(max_length=250)
