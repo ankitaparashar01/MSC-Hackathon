@@ -32,5 +32,6 @@ urlpatterns = [
          name="module3question"),
     path("delete-record/<int:id>", views.delrec),
     path("inside_ship/", InsideShipView.as_view(), name="insideship"),
-    path("outside_ship/", OutsideShipView.as_view(), name="Outsideship")
+    path("outside_ship/", OutsideShipView.as_view(), name="Outsideship"),
+    path("virtual-tour/", VirtualTourView.as_view(), name="virtualtour"),
 ]
