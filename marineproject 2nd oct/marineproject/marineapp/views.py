@@ -149,6 +149,10 @@ class OutsideShipView(TemplateView):
     template_name = "Outside_Ship.html"
     pass
 
+class VirtualTourView(TemplateView):
+    template_name = "virtualtourmain.html"
+    pass 
+
 
 # class VerificationView(TemplateView):
 #     #Template_name = "my_custom_email_message.html"
