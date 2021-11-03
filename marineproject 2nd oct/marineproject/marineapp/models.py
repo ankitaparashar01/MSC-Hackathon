@@ -71,5 +71,20 @@ class Module3(models.Model):
         return self.word1
 
 
-# class Hangman(models.Model):
-#     Word = models.CharField(max_length=250)
+class Hangman(models.Model):
+    word = models.CharField(max_length=250)
+    word_hint = models.TextField(blank=True, max_length=100)
+
+    def __str__(self):
+        return self.word
+
+    class Meta:
+        ordering = ["word"]
+
+
+class Answer(models.Model):
+    question_relation = models.ForeignKey(Hangman, on_delete=models.CASCADE)
+    answer = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.answer
