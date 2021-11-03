@@ -82,7 +82,6 @@ class LogInForm(forms.Form):
         }))
 
 
-
 class Module1Form(forms.ModelForm):
     class Meta:
         model = Module1
@@ -105,3 +104,15 @@ class Module3Form(forms.ModelForm):
         fields = ("word1", "word2", "question", "right_option",
                   "first_wrong_option", "second_wrong_option",
                   "third_wrong_option")
+
+
+class CheckAnswer(forms.Form):
+    your_answer = forms.CharField(label='Answer')
+
+    def clean(self):
+        cleaned_data = super(CheckAnswer, self).clean()
+        response = cleaned_data.get("your_answer")
+        try:
+            p = Answer.objects.get(answer__iexact=response)
+        except Answer.DoesNotExist:
+            raise forms.ValidationError("Wrong Answer.")
