@@ -24,13 +24,12 @@
             <table class="table table-active table-bordered table-hover-responsive-xl" id="myTable">
                 <thead class="thead-dark">
                     <tr id='tableHeader'>
-                        <th class="h5"> Word 1 </button> </th>
-                        <th class="h5"> Word 2 </button> </th>
                         <th class="h5"> Question </button> </th>
                         <th class="h5"> Right Option </button> </th>
                         <th class="h5"> First Wrong Option </button> </th>
                         <th class="h5"> Second Wrong Option </button> </th>
                         <th class="h5"> Third Wrong Option </button> </th>
+                        <th class="h5"> Explanation </button> </th>
                         <th class="h5"> Remove </button> </th>
                     </tr>
 
@@ -40,13 +39,12 @@
 
                     {% for i in module1_list%}
                     <tr>
-                        <td>{{i.word1}}</td>
-                        <td>{{i.word2}}</td>
                         <td>{{i.question}}</td>
                         <td>{{i.right_option}}</td>
                         <td>{{i.first_wrong_option}}</td>
                         <td>{{i.second_wrong_option}}</td>
                         <td>{{i.third_wrong_option}}</td>
+                        <td>{{i.explanation}}</td>
                         <td><a href="/delete-record/{{i.id}}"><button> Delete </button></a></td>
                     </tr>
                     {% endfor %}
@@ -65,13 +63,14 @@
             <table class="table table-active table-bordered table-hover-responsive-xl" id="myTable">
                 <thead class="thead-dark">
                     <tr id='tableHeader'>
-                        <th class="h5"> Word 1 </button> </th>
-                        <th class="h5"> Word 2 </button> </th>
+
                         <th class="h5"> Question </button> </th>
                         <th class="h5"> Right Option </button> </th>
                         <th class="h5"> First Wrong Option </button> </th>
                         <th class="h5"> Second Wrong Option </button> </th>
                         <th class="h5"> Third Wrong Option </button> </th>
+                        <th class="h5"> Explanation </button> </th>
+
                         <th class="h5"> Remove </button> </th>
                     </tr>
 
@@ -81,13 +80,13 @@
 
                     {% for i in module2_list%}
                     <tr>
-                        <td>{{i.word1}}</td>
-                        <td>{{i.word2}}</td>
+
                         <td>{{i.question}}</td>
                         <td>{{i.right_option}}</td>
                         <td>{{i.first_wrong_option}}</td>
                         <td>{{i.second_wrong_option}}</td>
                         <td>{{i.third_wrong_option}}</td>
+                        <td>{{i.explanation}}</td>
                         <td><a href=""><button> Delete </button></a></td>
                     </tr>
                     {% endfor %}
@@ -108,13 +107,13 @@
             <table class="table table-active table-bordered table-hover-responsive-xl" id="myTable">
                 <thead class="thead-dark">
                     <tr id='tableHeader'>
-                        <th class="h5"> Word 1 </button> </th>
-                        <th class="h5"> Word 2 </button> </th>
+
                         <th class="h5"> Question </button> </th>
                         <th class="h5"> Right Option </button> </th>
                         <th class="h5"> First Wrong Option </button> </th>
                         <th class="h5"> Second Wrong Option </button> </th>
                         <th class="h5"> Third Wrong Option </button> </th>
+                        <th class="h5"> Explanation </button> </th>
                     </tr>
 
                 </thead>
@@ -123,13 +122,101 @@
 
                     {% for i in module3_list%}
                     <tr>
-                        <td>{{i.word1}}</td>
-                        <td>{{i.word2}}</td>
+
                         <td>{{i.question}}</td>
                         <td>{{i.right_option}}</td>
                         <td>{{i.first_wrong_option}}</td>
                         <td>{{i.second_wrong_option}}</td>
                         <td>{{i.third_wrong_option}}</td>
+                        <td>{{i.explanation}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a href="{% url 'marineapp:module4question' %}"><button> Upload questions for Module 4</button></a>
+
+    <h1>Module 4 Table</h1>
+
+    <div class="row">
+
+        <div class="data_list_class" style="width: 100%;">
+            <table class="table table-active table-bordered table-hover-responsive-xl" id="myTable">
+                <thead class="thead-dark">
+                    <tr id='tableHeader'>
+
+                        <th class="h5"> Hangman Word </button> </th>
+
+                        <th class="h5"> Question </button> </th>
+                        <th class="h5"> Right Option </button> </th>
+                        <th class="h5"> First Wrong Option </button> </th>
+                        <th class="h5"> Second Wrong Option </button> </th>
+                        <th class="h5"> Third Wrong Option </button> </th>
+                        <th class="h5"> Explanation </button> </th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for i in module4_list%}
+                    <tr>
+                        <td>{{i.hangman_word}}</td>
+
+                        <td>{{i.question}}</td>
+                        <td>{{i.right_option}}</td>
+                        <td>{{i.first_wrong_option}}</td>
+                        <td>{{i.second_wrong_option}}</td>
+                        <td>{{i.third_wrong_option}}</td>
+                        <td>{{i.explanation}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="{% url 'marineapp:module5question' %}"><button> Upload questions for Module 5</button></a>
+
+    <h1>Module 5 Table</h1>
+
+    <div class="row">
+
+        <div class="data_list_class" style="width: 100%;">
+            <table class="table table-active table-bordered table-hover-responsive-xl" id="myTable">
+                <thead class="thead-dark">
+                    <tr id='tableHeader'>
+
+                        <th class="h5"> Hangman Word </button> </th>
+
+                        <th class="h5"> Question </button> </th>
+                        <th class="h5"> Right Option </button> </th>
+                        <th class="h5"> First Wrong Option </button> </th>
+                        <th class="h5"> Second Wrong Option </button> </th>
+                        <th class="h5"> Third Wrong Option </button> </th>
+                        <th class="h5"> Explanation </button> </th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for i in module5_list%}
+                    <tr>
+                        <td>{{i.hangman_word}}</td>
+
+                        <td>{{i.question}}</td>
+                        <td>{{i.right_option}}</td>
+                        <td>{{i.first_wrong_option}}</td>
+                        <td>{{i.second_wrong_option}}</td>
+                        <td>{{i.third_wrong_option}}</td>
+                        <td>{{i.explanation}}</td>
+
                     </tr>
                     {% endfor %}
 
@@ -139,9 +226,6 @@
     </div>
 
 
-
-    <a href=""><button> Upload questions for Module 4</button></a>
-    <a href=""><button> Upload questions for Module 5</button></a>
 
 
 </body>
