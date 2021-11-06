@@ -106,6 +106,22 @@ class Module3Form(forms.ModelForm):
                   "third_wrong_option")
 
 
+class Module4Form(forms.ModelForm):
+    class Meta:
+        model = Module4
+        fields = ("hangman_word", "question", "right_option",
+                  "first_wrong_option", "second_wrong_option",
+                  "third_wrong_option", "explanation")
+
+
+class Module5Form(forms.ModelForm):
+    class Meta:
+        model = Module5
+        fields = ("hangman_word", "question", "right_option",
+                  "first_wrong_option", "second_wrong_option",
+                  "third_wrong_option", "explanation")
+
+
 class CheckAnswer(forms.Form):
     your_answer = forms.CharField(label='Answer')
 
