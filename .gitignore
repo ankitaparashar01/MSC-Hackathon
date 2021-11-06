@@ -1,5 +1,14 @@
 *.pyc
-marineproject 2nd oct/marineproject/marineapp/__pycache__
-marineproject 2nd oct/virtenv
-marineproject 2nd oct/marineproject/marineproject/__pycache__
-marineproject 2nd oct/marineproject/marineapp/migrations/__pycache__
+__pycache__/
+
+# tests and coverage
+*.pytest_cache
+.coverage
+
+# database & logs
+*.db
+*.sqlite3
+*.log
+
+# venv
+virtenv
