@@ -30,6 +30,14 @@ urlpatterns = [
     path("module3question/",
          Module3QuestionView.as_view(),
          name="module3question"),
+    path("module4question/",
+         Module4QuestionView.as_view(),
+         name="module4question"),
+
+    path("module5question/",
+         Module5QuestionView.as_view(),
+         name="module5question"),
+         
     path("delete-record/<int:id>", views.delrec),
     path("inside_ship/", InsideShipView.as_view(), name="insideship"),
     path("outside_ship/", OutsideShipView.as_view(), name="Outsideship"),
