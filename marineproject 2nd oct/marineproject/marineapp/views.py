@@ -98,6 +98,8 @@ class TrainerDashboardView(TemplateView):
         context['module1_list'] = Module1.objects.all()
         context['module2_list'] = Module2.objects.all()
         context['module3_list'] = Module3.objects.all()
+        context['module4_list'] = Module4.objects.all()
+        context['module5_list'] = Module5.objects.all()
 
         return context
 
@@ -133,6 +135,24 @@ class Module2QuestionView(CreateView):
 class Module3QuestionView(CreateView):
     template_name = "module3.html"
     form_class = Module3Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
+
+class Module4QuestionView(CreateView):
+    template_name = "module4.html"
+    form_class = Module4Form
+    success_url = reverse_lazy("marineapp:trainerdashboard")
+
+    def form_valid(self, form):
+
+        return super().form_valid(form)
+
+class Module5QuestionView(CreateView):
+    template_name = "module5.html"
+    form_class = Module5Form
     success_url = reverse_lazy("marineapp:trainerdashboard")
 
     def form_valid(self, form):
