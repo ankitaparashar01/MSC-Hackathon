@@ -31,13 +31,12 @@ class Customer(models.Model):
 
 class Module1(models.Model):
 
-    word1 = models.CharField(max_length=250)
-    word2 = models.CharField(max_length=250)
     question = models.CharField(max_length=2000)
     right_option = models.CharField(max_length=1000)
     first_wrong_option = models.CharField(max_length=1000)
     second_wrong_option = models.CharField(max_length=1000)
     third_wrong_option = models.CharField(max_length=1000)
+    explanation = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.word1
@@ -45,13 +44,14 @@ class Module1(models.Model):
 
 class Module2(models.Model):
 
-    word1 = models.CharField(max_length=250)
-    word2 = models.CharField(max_length=250)
+
     question = models.CharField(max_length=2000)
     right_option = models.CharField(max_length=1000)
     first_wrong_option = models.CharField(max_length=1000)
     second_wrong_option = models.CharField(max_length=1000)
     third_wrong_option = models.CharField(max_length=1000)
+    explanation = models.CharField(max_length=1000)
+
 
     def __str__(self):
         return self.word1
@@ -66,6 +66,8 @@ class Module3(models.Model):
     first_wrong_option = models.CharField(max_length=1000)
     second_wrong_option = models.CharField(max_length=1000)
     third_wrong_option = models.CharField(max_length=1000)
+    explanation = models.CharField(max_length=1000)
+
 
     def __str__(self):
         return self.word1
