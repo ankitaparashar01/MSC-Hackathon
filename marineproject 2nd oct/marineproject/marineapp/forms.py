@@ -85,25 +85,25 @@ class LogInForm(forms.Form):
 class Module1Form(forms.ModelForm):
     class Meta:
         model = Module1
-        fields = ("word1", "word2", "question", "right_option",
+        fields = ("question", "right_option",
                   "first_wrong_option", "second_wrong_option",
-                  "third_wrong_option")
+                  "third_wrong_option", "explanation")
 
 
 class Module2Form(forms.ModelForm):
     class Meta:
         model = Module2
-        fields = ("word1", "word2", "question", "right_option",
+        fields = ("question", "right_option",
                   "first_wrong_option", "second_wrong_option",
-                  "third_wrong_option")
+                  "third_wrong_option", "explanation")
 
 
 class Module3Form(forms.ModelForm):
     class Meta:
         model = Module3
-        fields = ("word1", "word2", "question", "right_option",
+        fields = ("question", "right_option",
                   "first_wrong_option", "second_wrong_option",
-                  "third_wrong_option")
+                  "third_wrong_option", "explanation")
 
 
 class Module4Form(forms.ModelForm):
