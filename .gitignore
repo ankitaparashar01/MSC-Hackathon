@@ -13,4 +13,5 @@ __pycache__/
 # venv
 virtenv
 marineproject 2nd oct/marineproject/db.sqlite3
+marineproject 2nd oct/marineproject/db.sqlite3
 *.sqlite3
