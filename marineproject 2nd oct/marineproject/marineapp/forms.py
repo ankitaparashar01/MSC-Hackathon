@@ -82,6 +82,8 @@ class LogInForm(forms.Form):
         }))
 
 
+
+
 class Module1Form(forms.ModelForm):
     class Meta:
         model = Module1
