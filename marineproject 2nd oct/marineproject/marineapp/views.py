@@ -162,6 +162,10 @@ class Module5QuestionView(CreateView):
         return super().form_valid(form)
 
 
+class MatchInstructionView(TemplateView):
+    template_name = "matchinstruction.html"
+
+
 class InsideShipView(TemplateView):
     template_name = "Inside_Ship.html"
     pass
