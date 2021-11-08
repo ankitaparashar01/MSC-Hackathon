@@ -42,4 +42,6 @@ urlpatterns = [
     path("inside_ship/", InsideShipView.as_view(), name="insideship"),
     path("outside_ship/", OutsideShipView.as_view(), name="Outsideship"),
     path("virtual-tour/", VirtualTourView.as_view(), name="virtualtour"),
+    path("match-learn-instructions/", MatchInstructionView.as_view(), name="matchinstruction"),
+    
 ]
