@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("marineapp.urls")),
     path('verification/', include('verify_email.urls')),  #Email Verification
+    path('quiz/', include('quizes.urls', namespace='quizes')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
