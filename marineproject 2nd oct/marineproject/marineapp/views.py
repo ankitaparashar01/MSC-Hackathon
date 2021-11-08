@@ -142,6 +142,7 @@ class Module3QuestionView(CreateView):
 
         return super().form_valid(form)
 
+
 class Module4QuestionView(CreateView):
     template_name = "module4.html"
     form_class = Module4Form
@@ -150,6 +151,7 @@ class Module4QuestionView(CreateView):
     def form_valid(self, form):
 
         return super().form_valid(form)
+
 
 class Module5QuestionView(CreateView):
     template_name = "module5.html"
@@ -170,9 +172,10 @@ class OutsideShipView(TemplateView):
     template_name = "Outside_Ship.html"
     pass
 
+
 class VirtualTourView(TemplateView):
     template_name = "virtualtourmain.html"
-    pass 
+    pass
 
 
 # class VerificationView(TemplateView):
