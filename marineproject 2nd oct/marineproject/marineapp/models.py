@@ -11,16 +11,10 @@ from django.forms import ModelForm
 
 
 class Customer(models.Model):
-    # DEPARTMENT_CHOICES = [
-    #     ('HR', 'HR'),
-    #     ('Trainer', 'Trainer'),
-    #     ('Trainee', 'Trainee'),
-    # ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField("Full Name", max_length=250)
     email = models.EmailField()
-    # department = MultiSelectField(choices=DEPARTMENT_CHOICES)
     hr = models.BooleanField("HR", default=False)
     trainer = models.BooleanField("Trainer", default=False)
     trainee = models.BooleanField("Trainee", default=False)
@@ -44,14 +38,12 @@ class Module1(models.Model):
 
 class Module2(models.Model):
 
-
     question = models.CharField(max_length=2000)
     right_option = models.CharField(max_length=1000)
     first_wrong_option = models.CharField(max_length=1000)
     second_wrong_option = models.CharField(max_length=1000)
     third_wrong_option = models.CharField(max_length=1000)
     explanation = models.CharField(max_length=1000)
-
 
     def __str__(self):
         return self.word1
@@ -67,7 +59,6 @@ class Module3(models.Model):
     second_wrong_option = models.CharField(max_length=1000)
     third_wrong_option = models.CharField(max_length=1000)
     explanation = models.CharField(max_length=1000)
-
 
     def __str__(self):
         return self.word1
@@ -112,9 +103,9 @@ class Hangman(models.Model):
         ordering = ["word"]
 
 
-class Answer(models.Model):
-    question_relation = models.ForeignKey(Hangman, on_delete=models.CASCADE)
-    answer = models.CharField(max_length=100, unique=True)
+# class Answer(models.Model):
+#     question_relation = models.ForeignKey(Hangman, on_delete=models.CASCADE)
+#     answer = models.CharField(max_length=100, unique=True)
 
-    def __str__(self):
-        return self.answer
+#     def __str__(self):
+#         return self.answer
