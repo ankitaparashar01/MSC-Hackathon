@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'multiselectfield',  #DJANGO MULTISELECT FIELD
     'verify_email.apps.VerifyEmailConfig',  #Email Verification
     'django_email_verification',  # WORKSSSSSSSS YAY
+    'quizes',
+    'questions',
+    'results',
 ]
 
 MIDDLEWARE = [
@@ -124,10 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILE_DIRS = [BASE_DIR / "static"]
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [BASE_DIR / 'static/', BASE_DIR / 'quizes' / 'static']
 STATIC_ROOT = BASE_DIR / "static_cdn"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
